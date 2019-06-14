@@ -7,12 +7,12 @@ use App\Category;
 use App\Area;
 use App\Traits\Eloquent\OrderableTrait;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SofDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Builder;
 
 class Listing extends Model
 {
-    use Orderable, SoftDeletes;
+    use OrderableTrait, SoftDeletes;
 
     public function scopeIsLive(Builder $builder)
     {

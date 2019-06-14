@@ -12,5 +12,14 @@ Route::group(['prefix' => '/{area}'], function () {
      */
     Route::group(['prefix' => '/categories'], function() {
         Route::get('/', 'Categories\CategoryController@index')->name('category.index');
+        
+        Route::group(['prefix' => '/{category}'], function(){
+            Route::get('/listings', 'Listing\ListingController@index')->name('listings.index');
+        });
     });
+    /**
+     * Listings
+     */
+
+     Route::get('/{listing}', 'Listing\ListingController@show')->name('listings.show');
 });
