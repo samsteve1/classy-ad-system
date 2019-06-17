@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
         <div class="row">
                 @foreach ($categories as $category)
                     <div class="col-md-4 my-1">
@@ -14,5 +13,4 @@
                     </div>
                 @endforeach
         </div>
-    </div>
 @endsection

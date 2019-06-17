@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
         <div class="row">
             @if (Auth::check())
             <div class="col-md-3">
@@ -62,5 +61,4 @@
                 @endif
             </div>
         </div>
-    </div>
 @endsection
