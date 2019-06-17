@@ -6,13 +6,14 @@ use App\User;
 use App\Category;
 use App\Area;
 use App\Traits\Eloquent\OrderableTrait;
+use App\Traits\Eloquent\PivotOrderableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Builder;
 
 class Listing extends Model
 {
-    use OrderableTrait, SoftDeletes;
+    use OrderableTrait, PivotOrderableTrait, SoftDeletes;
 
     public function scopeIsLive(Builder $builder)
     {
@@ -59,5 +60,14 @@ class Listing extends Model
     {
         return $this->belongsTo(Area::class);
     }
+
+    public function favourites()
+    {
+        return $this->morphToMany(User::class, 'favouriteable');
+    }
     
+    public function favouritedBy(User $user)
+    {
+        return $this->favourites->contains($user);
+    }
 }

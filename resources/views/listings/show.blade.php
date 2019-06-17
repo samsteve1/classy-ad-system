@@ -9,7 +9,16 @@
                         <div class="card-body">
                             <nav class="nav flex-column">
                                 <a href="#" class="nav-link">Email to a friend</a>
-                                <a href="#" class="nav-link">Add to favourites</a>
+
+                                @if(!$listing->favouritedBy(Auth::user()))
+
+                                <a href="#" onclick="event.preventDefault(); document.getElementById('listings-favourite-form').submit();" class="nav-link">Add to favourites</a>
+                                <form action="{{ route('listings.favourites.store', [$area, $listing]) }}" method="POST" id="listings-favourite-form" class="hidden">
+
+                                    @csrf
+
+                                </form>
+                                @endif
                             </nav>
                         </div>
                     </div>

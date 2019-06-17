@@ -8,6 +8,7 @@
             @endif
         </h5>
         <p><small>{{ $listing->created_at->diffForHumans() }}, {{ $listing->user->name }}</small></p>
+
+        {{ isset($links) ? $links: ''  }}
     </div>
 </div>
-@yield('links')
