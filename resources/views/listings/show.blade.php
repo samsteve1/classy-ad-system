@@ -42,11 +42,16 @@
                             <h4>Contact {{ $listing->user->name }}</h4>
                         </div>
                         <div class="card-body">
-                            <form action="#" method="POST">
+                            <form action="{{ route('listings.contact.store', [$area, $listing]) }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="message" class="form-control-label">Message</label>
-                                    <textarea name="message" id="message" cols="30" rows="5" class="form-control"></textarea>
+                                    <textarea name="message" id="message" cols="30" rows="5" class="form-control{{ $errors->has('message') ? ' is-invalid': '' }}"></textarea>
+                                    @if ($errors->has('message'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('message') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary btn-block" type="submit" aria-describedby="submitHelp">Send message</button>
