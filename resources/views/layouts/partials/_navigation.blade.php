@@ -28,7 +28,10 @@
                     @endif
                 @else
                     <li class="nav-item">
-                            <a class="nav-link" href="{{ route('listings.favourites.index', $area) }}">Favourites</a>
+                        <a class="nav-link" href="{{ route('listings.favourites.index', $area) }}">Favourites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('listings.viewed.index', $area) }}" class="nav-link">Recently Viewed</a>
                     </li>
                     <li class="nav-item dropdown">
                           

@@ -7,7 +7,7 @@
                 in {{ $listing->area->name }}
             @endif
         </h5>
-        <p><small>{{ $listing->created_at->diffForHumans() }}, {{ $listing->user->name }}</small></p>
+        <p><small>{{ $listing->created_at->diffForHumans() }}, {{ $listing->user->name }} {{ $listing->views() }}</small></p>
 
         {{ isset($links) ? $links: ''  }}
     </div>

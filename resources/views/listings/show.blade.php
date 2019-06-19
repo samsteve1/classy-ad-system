@@ -33,7 +33,7 @@
                     <div class="card-body">
                         {!! nl2br(e($listing->body)) !!}
 
-                        <p>Viewed x times</p>
+                        <p>Viewed {{ $listing->views() }} times</p>
                     </div>
                 </div>
                 @if(Auth::check())
