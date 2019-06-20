@@ -7,7 +7,7 @@ Hi {{ $listing->user->name }},<br><br>
 
 ---<br>
 
-{!! nl2br(e($message)) !!}
+{!! nl2br(e($body)) !!}
 
 ---<br><br>
 

@@ -15,6 +15,8 @@ class Listing extends Model
 {
     use OrderableTrait, PivotOrderableTrait, SoftDeletes;
 
+    protected $fillable = ['title', 'body', 'area_id', 'category_id'];
+
     public function scopeIsLive(Builder $builder)
     {
         return $builder->where('live', true);
@@ -52,6 +54,10 @@ class Listing extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function ownedByUser(User $user)
+    {
+        return $this->user->id === $user->id;
+    }
     public function category()
     {
         return $this->belongsTo(Category::class);

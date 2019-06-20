@@ -27,11 +27,17 @@
                         </li>
                     @endif
                 @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('listings.favourites.index', $area) }}">Favourites</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('listings.viewed.index', $area) }}" class="nav-link">Recently Viewed</a>
+
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                           Listings
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="{{ route('listings.create', $area) }}" class="dropdown-item">Add Listing</a>
+                            <a class="dropdown-item" href="{{ route('listings.favourites.index', $area) }}">Favourites</a>
+                            <a href="{{ route('listings.viewed.index', $area) }}" class="dropdown-item">Recently Viewed</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
                           
