@@ -17,6 +17,9 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
+                <li class="nav-item">
+
+                </li>
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -27,7 +30,12 @@
                         </li>
                     @endif
                 @else
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('listings.favourites.index', $area) }}">Favourites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('listings.viewed.index', $area) }}" class="nav-link">Recently Viewed</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                            Listings
@@ -35,8 +43,8 @@
 
                         <div class="dropdown-menu dropdown-menu-right">
                             <a href="{{ route('listings.create', $area) }}" class="dropdown-item">Add Listing</a>
-                            <a class="dropdown-item" href="{{ route('listings.favourites.index', $area) }}">Favourites</a>
-                            <a href="{{ route('listings.viewed.index', $area) }}" class="dropdown-item">Recently Viewed</a>
+                            <a href="{{ route('listings.unpublished.index', $area) }}" class="dropdown-item">Unpublished listings ({{ $unpublishedListingsCount }})</a>
+                            <a href="{{ route('listings.published.index', $area) }}" class="dropdown-item">Published listings ({{ $publishedListingsCount }})</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
