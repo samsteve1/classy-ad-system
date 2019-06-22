@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "69775f3a69d071e8bd4d143737744af8",
+    "content-hash": "642f15df7c0a4f12b2db55f3bb4d6d25",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -73,6 +73,53 @@
                 "webprofiler"
             ],
             "time": "2019-02-26T18:01:54+00:00"
+        },
+        {
+            "name": "braintree/braintree_php",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/braintree/braintree_php.git",
+                "reference": "486d1326854410bf045bb0e2d28e401936de7712"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/braintree/braintree_php/zipball/486d1326854410bf045bb0e2d28e401936de7712",
+                "reference": "486d1326854410bf045bb0e2d28e401936de7712",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-dom": "*",
+                "ext-hash": "*",
+                "ext-openssl": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Braintree": "lib/"
+                },
+                "psr-4": {
+                    "Braintree\\": "lib/Braintree"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Braintree",
+                    "homepage": "https://www.braintreepayments.com"
+                }
+            ],
+            "description": "Braintree PHP Client Library",
+            "time": "2019-05-21T15:52:11+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

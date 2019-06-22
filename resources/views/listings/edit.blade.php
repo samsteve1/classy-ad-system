@@ -43,7 +43,10 @@
                                 <input type="hidden" name="category_id" value="{{ $listing->category_id }}">
                             @endif
                             <div class="form-group">
-                                <button class="btn btn-primary pull-left" type="submit">Save</button>
+                                <button class="btn btn-default pull-left" type="submit">Save</button>
+                                @if (!$listing->live())
+                                    <button class="btn btn-primary" type="submit" name="payment">Continue to payment</button>
+                                @endif
                             </div>
                         </form>
                     </div>

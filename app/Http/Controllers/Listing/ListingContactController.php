@@ -20,5 +20,6 @@ class ListingContactController extends Controller
         Mail::to($listing->user)->queue(
             new ContactListingOwner($request->user(), $listing, $request->message)
         );
+        return back()->withSuccess('Message sent to listing owner');
     }
 }
