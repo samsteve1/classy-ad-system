@@ -7,7 +7,7 @@
                     <div class="card">
                         <div class="card-body">
                             <nav class="nav flex-column">
-                                <a href="#" class="nav-link">Email to a friend</a>
+                                <a href="{{ route('listings.share.index', [$area, $listing]) }}" class="nav-link">Email to a friend</a>
 
                                 @if(!$listing->favouritedBy(Auth::user()))
 

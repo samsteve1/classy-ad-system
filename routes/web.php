@@ -44,6 +44,10 @@ Route::group(['prefix' => '/{area}'], function () {
 
         Route::get('/unpublished', 'ListingUpublishedController@index')->name('listings.unpublished.index');
         Route::get('/published', 'ListingPublishedController@index')->name('listings.published.index');
+        
+        //  Share listing
+        Route::get('/{listing}/share', 'ListingShareController@index')->name('listings.share.index');
+        Route::post('/{listing}/share', 'ListingShareController@store')->name('listings.share.store');
     
         Route::group(['middleware' => 'auth'], function (){
             Route::get('/create', 'ListingController@create')->name('listings.create');
