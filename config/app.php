@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
 
+         Laravel\Scout\ScoutServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -176,6 +177,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
         App\Providers\BraintreeServiceProvider::class,
+        
 
     ],
 
