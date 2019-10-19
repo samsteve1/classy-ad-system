@@ -14,7 +14,7 @@ use Laravel\Scout\Searchable;
 
 class Listing extends Model
 {
-    use OrderableTrait, PivotOrderableTrait, SoftDeletes, Searchable;
+    use OrderableTrait, PivotOrderableTrait, SoftDeletes;//, Searchable;
 
     protected $fillable = ['title', 'body', 'area_id', 'category_id'];
 
@@ -37,8 +37,8 @@ class Listing extends Model
     public function scopeInArea(Builder $builder, Area $area)
     {
         return $builder->whereIn('area_id', array_merge([$area->id], $area->descendants->pluck('id')->toArray()
-        
-        )); 
+
+        ));
     }
 
 
@@ -72,7 +72,7 @@ class Listing extends Model
     {
         return $this->morphToMany(User::class, 'favouriteable');
     }
-    
+
     public function favouritedBy(User $user)
     {
         return $this->favourites->contains($user);
@@ -84,7 +84,7 @@ class Listing extends Model
     public function views()
     {
         return array_sum($this->viewedUsers->pluck('pivot.count')->toArray());
-        
+
         //return $this->viewedUsers()->sum('count');
     }
 

@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'en_NG',
 
     /*
     |--------------------------------------------------------------------------
@@ -177,7 +177,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
         App\Providers\BraintreeServiceProvider::class,
-        
+
 
     ],
 
